@@ -14,7 +14,7 @@ import {
 } from 'reactstrap';
 import { AuthContext } from '../context/AuthState';
 
-/* const items = [
+const items = [
   {
     img: 'roflproject3/uploads/elephant.jpg',
     name: 'Elephant',
@@ -34,7 +34,7 @@ import { AuthContext } from '../context/AuthState';
       'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus',
     id: 2,
   },
-]; */
+];
 
 export const Showcase = () => {
   const { isAuthenticated } = useContext(AuthContext);
@@ -55,7 +55,7 @@ export const Showcase = () => {
               <Media   middle href="#" style={{ cursor: 'default' }}>
                 <Media
                   object
-                  src={items[imgId].img}
+                  data-src={items[imgId].img}
                   alt="Generic placeholder image"
                   style={{width:'100%', height:'100%'}}
                   
@@ -72,7 +72,7 @@ export const Showcase = () => {
               <Media
                 object
                 role="button"
-                src={item.img}
+                data-src={item.img}
                 width="300px"
                 height="200px"
                 alt="Generic placeholder image"
