@@ -51,16 +51,12 @@ export const Showcase = () => {
         <Modal isOpen={modal} toggle={toggle} className="modal-xl ">
           <ModalHeader>{items[imgId].name}</ModalHeader>
           <ModalBody className="mx-auto">
-            <Media align="center" className="mt-1">
-              <Media middle href="#" style={{ cursor: 'default' }}>
-                <Media
+                <img
                   object
-                  img-src={items[imgId].img}
+                  src={items[imgId].img}
                   alt="Generic placeholder image"
                   style={{ width: '100%', height: '100%' }}
                 />
-              </Media>
-            </Media>
           </ModalBody>
         </Modal>
         <ListGroup>
@@ -120,3 +116,14 @@ export const Showcase = () => {
     </>
   );
 };
+
+{/* <Media align="center" className="mt-1">
+<Media middle href="#" style={{ cursor: 'default' }}>
+  <Media
+    object
+    img-src={items[imgId].img}
+    alt="Generic placeholder image"
+    style={{ width: '100%', height: '100%' }}
+  />
+</Media>
+</Media> */}
