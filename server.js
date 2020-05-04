@@ -18,7 +18,6 @@ app.use(express.static(__dirname));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/users', require('./routes/users'));
 
-
 //huita
 const fs = require('fs');
 const Picture = require('./models/image');
@@ -50,8 +49,8 @@ app.post('/api/images/upload', (req, res, next) => {
       return res.status(500).json(err);
     } else if (err) {
       return res.status(500).json(err);
-    } else if (!req.file){
-      return res.status(500).json({ msg: 'no file selected'});
+    } else if (!req.file) {
+      return res.status(500).json({ msg: 'no file selected' });
     }
     newPic = new Picture({ name: req.file.filename });
     newPic.save();
