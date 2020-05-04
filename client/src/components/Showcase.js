@@ -48,7 +48,7 @@ export const Showcase = () => {
   return (
     <>
       <Container>
-        <Modal isOpen={modal} toggle={toggle} className="modal-xl ">
+{/*         <Modal isOpen={modal} toggle={toggle} className="modal-xl ">
           <ModalHeader>{items[imgId].name}</ModalHeader>
           <ModalBody className="mx-auto">
             <Media align="center" className="mt-1">
@@ -62,16 +62,15 @@ export const Showcase = () => {
               </Media>
             </Media>
           </ModalBody>
-        </Modal>
+        </Modal> */}
         <ListGroup>
           {items.map((item) => (
             <ListGroupItem
               key={item.id}
               className="d-flex justify-content-between align-items-center ">
-              <Media
-                object
+              <img
                 role="button"
-                img-src={item.img}
+                src={item.img}
                 width="300px"
                 height="200px"
                 alt="Generic placeholder image"
