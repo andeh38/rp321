@@ -1,0 +1,4 @@
+{
+  "jwtSecret": "rofloproject3_jwtSecret",
+  "MONGO_URI": "mongodb+srv://asd:asdasd@mflix-nkwai.mongodb.net/roflproject3?"
+}
