@@ -88,7 +88,7 @@ export const UploadImage = () => {
             />
             <img
               id="image"
-              src={`../../uploads/${imageName}`}
+              src={`./uploads/${imageName}`}
               alt="Generic placeholder"
               width="400"
               height="341"></img>
