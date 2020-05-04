@@ -71,7 +71,7 @@ export const Showcase = () => {
               <Media
                 object
                 role="button"
-                data-src={item.img}
+                img-src={item.img}
                 width="300px"
                 height="200px"
                 alt="Generic placeholder image"
