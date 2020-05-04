@@ -8,7 +8,7 @@ import {
   CarouselCaption
 } from 'reactstrap';
 
-const items = [
+/* const items = [
   {
     id: 1,
     altText: 'Slide 1',
@@ -25,7 +25,7 @@ const items = [
     caption: 'Slide 3'
   }
 ];
-
+ */
 export const CarouselComponent = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);

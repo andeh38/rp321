@@ -53,7 +53,7 @@ export const Showcase = () => {
           <ModalBody className="mx-auto">
                 <img
                   object
-                  src={'/uploads/squirrel.jpg'}
+                  src={items[imgId].img}
                   alt="Generic placeholder image"
                   style={{ width: '100%', height: '100%' }}
                 />
@@ -66,7 +66,7 @@ export const Showcase = () => {
               className="d-flex justify-content-between align-items-center ">
               <img
                 role="button"
-                src={'/uploads/squirrel.jpg'}
+                src={item.img}
                 width="300px"
                 height="200px"
                 alt="Generic placeholder image"
