@@ -21,10 +21,9 @@ function App() {
     <AuthProvider>
       <div className="App">
         <AppNavbar>
-          <div id ='das'>dasdsadsa</div>
-{/*           <Showcase id="Showcase"></Showcase> */}
-{/*           <UploadImage id="Upload image"></UploadImage> */}
-{/*           <CarouselComponent id="Carousel"></CarouselComponent> */}
+          <Showcase id="Showcase"></Showcase>
+          <UploadImage id="Upload image"></UploadImage>
+          <CarouselComponent id="Carousel"></CarouselComponent>
           {/* <div id="Expense tracker">
             <ExpenseProvider>
               <Container>
