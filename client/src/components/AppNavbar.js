@@ -40,10 +40,10 @@ const Link = function () {
 export const AppNavbar = (props) => {
   const [activeTab, setActiveTab] = useState(0);
 
-/*   useEffect(() => {
+  useEffect(() => {
     if (sessionStorage.getItem('currentTab'))
       setActiveTab(Number(sessionStorage.getItem('currentTab')));
-  }, []); */
+  }, []);
 
   const toggle = (tab) => {
     if (activeTab !== tab) setActiveTab(tab);
