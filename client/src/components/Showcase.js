@@ -16,19 +16,19 @@ import { AuthContext } from '../context/AuthState';
 
 const items = [
   {
-    img: './uploads/elephant.jpg',
+    img: './uploads/elephant.JPG',
     name: 'Elephant',
     description: 'text about elephants',
     id: 0,
   },
   {
-    img: './uploads/raccoon.jpg',
+    img: './uploads/raccoon.JPG',
     name: 'Raccoon',
     description: 'text about raccoons',
     id: 1,
   },
   {
-    img: './uploads/squirrel.jpg',
+    img: './uploads/squirrel.JPG',
     name: 'Squirrel',
     description:
       'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus',

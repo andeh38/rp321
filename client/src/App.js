@@ -22,7 +22,7 @@ function App() {
       <div className="App">
         <AppNavbar>
           <Showcase id="Showcase"></Showcase>
-          <UploadImage id="Upload image"></UploadImage>
+{/*           <UploadImage id="Upload image"></UploadImage> */}
           <CarouselComponent id="Carousel"></CarouselComponent>
           {/* <div id="Expense tracker">
             <ExpenseProvider>
