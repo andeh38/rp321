@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'reactstrap';
 import { AppNavbar } from './components/AppNavbar';
 import { UploadImage } from './components/UploadImage';
 import { CarouselComponent } from './components/Carousel';

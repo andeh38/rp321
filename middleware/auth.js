@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
-const config = require('config');
+const dotenv = require('dotenv');
+
+dotenv.config({ path: '../config/config.env' });
 
 auth = async function (req, res, next) {
   const token = req.header('x-auth-token');
@@ -7,7 +9,7 @@ auth = async function (req, res, next) {
   if (!token) return res.status(401).json({ msg: 'no token' });
   try {
     //verify token
-    const decoded = jwt.verify(token, config.get('jwtSecret'));
+    const decoded = jwt.verify(token, process.env.jwtSecret);
     // add user from payload
     req.user = decoded;
     next();

@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const config = require('config');
+const dotenv = require('dotenv');
+
+dotenv.config({ path: '../config/config.env' });
 
 const User = require('../models/user');
 
@@ -34,7 +36,7 @@ exports.register = async (req, res, next) => {
           newUser.save().then((user) => {
             jwt.sign(
               { id: user.id },
-              config.get('jwtSecret'),
+              process.env.jwtSecret,
               { expiresIn: 3600 },
               (err, token) => {
                 if (err) throw err;

@@ -3,7 +3,6 @@ import {
   Toast,
   ToastBody,
   ToastHeader,
-  Media,
   Container,
   ListGroup,
   ListGroupItem,
@@ -54,7 +53,7 @@ export const Showcase = () => {
                 <img
                   object
                   src={items[imgId].img}
-                  alt="Generic placeholder image"
+                  alt="Generic placeholder"
                   style={{ width: '100%', height: '100%' }}
                 />
           </ModalBody>
@@ -69,7 +68,7 @@ export const Showcase = () => {
                 src={item.img}
                 width="300px"
                 height="200px"
-                alt="Generic placeholder image"
+                alt="Generic placeholder"
                 onClick={() => {
                   setImgId(item.id);
                   setModal(!modal);
@@ -117,13 +116,3 @@ export const Showcase = () => {
   );
 };
 
-{/* <Media align="center" className="mt-1">
-<Media middle href="#" style={{ cursor: 'default' }}>
-  <Media
-    object
-    img-src={items[imgId].img}
-    alt="Generic placeholder image"
-    style={{ width: '100%', height: '100%' }}
-  />
-</Media>
-</Media> */}
