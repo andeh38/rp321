@@ -25,8 +25,12 @@ const Link = function () {
       {isAuthenticated ? (
         <>
           <NavItem style={{ listStyleType: 'none' }}>
-            <NavLink
-              style={{ color: 'white' }}>{`welcome ${user.user.name}`}</NavLink>
+            {document.documentElement.clientWidth > 768 ? (
+              <NavLink
+                style={{
+                  color: 'white',
+                }}>{`welcome ${user.user.name}`}</NavLink>
+            ) : null}
           </NavItem>
           <Logout></Logout>
         </>
@@ -109,9 +113,16 @@ export const AppNavbar = (props) => {
         <Container>
           {document.documentElement.clientWidth < 768 ? (
             <>
-              <Dropdown isOpen={dropdownOpen} toggle={dropdownToggle} style={{backgroundColor: '#292b2c'}}>
-                <DropdownToggle caret style={{backgroundColor: '#292b2c'}}>Dropdown</DropdownToggle>
-                <DropdownMenu style={{backgroundColor: '#292b2c'}}>{buttons}</DropdownMenu>
+              <Dropdown
+                isOpen={dropdownOpen}
+                toggle={dropdownToggle}
+                style={{ backgroundColor: '#292b2c' }}>
+                <DropdownToggle caret style={{ backgroundColor: '#292b2c' }}>
+                  Dropdown
+                </DropdownToggle>
+                <DropdownMenu style={{ backgroundColor: '#292b2c' }}>
+                  {buttons}
+                </DropdownMenu>
               </Dropdown>
             </>
           ) : (
@@ -142,4 +153,3 @@ const style2 = {
   color: 'white',
   cursor: 'pointer',
 };
-
