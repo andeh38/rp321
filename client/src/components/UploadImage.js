@@ -90,8 +90,8 @@ export const UploadImage = () => {
               id="image"
               src={`/uploads/${imageName}`}
               alt="Generic placeholder"
-              width="400"
-              height="341"></img>
+              width="50%"
+              height="25%"></img>
             {DeleteButton}
             <br />
             <br />

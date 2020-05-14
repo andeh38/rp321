@@ -23,7 +23,8 @@ const items = [
   {
     img: '/uploads/raccoon.jpg',
     name: 'Raccoon',
-    description: 'text about raccoons',
+    description:
+      'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condi',
     id: 1,
   },
   {
@@ -46,28 +47,26 @@ export const Showcase = () => {
 
   return (
     <>
-      <Container>
+      <Container style={{ rowHeight: '1 px' }}>
         <Modal isOpen={modal} toggle={toggle} className="modal-xl ">
           <ModalHeader>{items[imgId].name}</ModalHeader>
           <ModalBody className="mx-auto">
-                <img
-                  object
-                  src={items[imgId].img}
-                  alt="Generic placeholder"
-                  style={{ width: '100%', height: '100%' }}
-                />
+            <img
+              object
+              src={items[imgId].img}
+              alt="Generic placeholder"
+              style={{ width: '100%', height: '100%' }}
+            />
           </ModalBody>
         </Modal>
-        <ListGroup>
+        <ListGroup className="d-flex flex-column">
           {items.map((item) => (
-            <ListGroupItem
-              key={item.id}
-              className="d-flex justify-content-between align-items-center ">
+            <ListGroupItem key={item.id} className="d-flex align-items-center ">
               <img
                 role="button"
                 src={item.img}
-                width="300px"
-                height="200px"
+                width="30%"
+                height="100%"
                 alt="Generic placeholder"
                 onClick={() => {
                   setImgId(item.id);
@@ -75,9 +74,13 @@ export const Showcase = () => {
                   console.log(item.name);
                 }}
               />
-              <div style={{ width: '50%' }}>
-                <h5>{item.name}</h5>
-                <div>{item.description}</div>
+              <div className=" p-2 bd-highlight " style={{ width: '50%' }}>
+                <h5 style={{ width: '100%' }}>{item.name}</h5>
+                <div
+                  style={{ height: '100px', width: '100%' }}
+                  className=" overflow-auto">
+                  {item.description}
+                </div>
               </div>
               {isAuthenticated ? (
                 <Button
@@ -92,11 +95,16 @@ export const Showcase = () => {
                       }, 1500);
                     }
                   }}
-                  style={{ height: '40px' }}>
+                  className="ml-auto p-2 bd-highlight"
+                  style={{ height: '100%', width: '20%', }}>
                   Do something
                 </Button>
               ) : (
-                <div>Register or login to continue</div>
+                <div
+                  style={{ height: '100%', width: '20%', marginRight: '0px' }}
+                  className="  overflow-auto">
+                  Authorize to continue
+                </div>
               )}
             </ListGroupItem>
           ))}
@@ -115,4 +123,3 @@ export const Showcase = () => {
     </>
   );
 };
-

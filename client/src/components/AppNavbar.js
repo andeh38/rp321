@@ -1,5 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react';
 import {
+  DropdownMenu,
+  DropdownItem,
+  Dropdown,
+  DropdownToggle,
   TabContent,
   TabPane,
   Navbar,
@@ -17,7 +21,7 @@ const Link = function () {
   const { isAuthenticated, user } = useContext(AuthContext);
 
   return (
-    <div className="d-inline-flex ml-auto">
+    <div className="d-inline-flex  ml-auto">
       {isAuthenticated ? (
         <>
           <NavItem style={{ listStyleType: 'none' }}>
@@ -36,7 +40,10 @@ const Link = function () {
 };
 
 export const AppNavbar = (props) => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
+
+  const dropdownToggle = () => setDropdownOpen((prevState) => !prevState);
 
   useEffect(() => {
     if (sessionStorage.getItem('currentTab'))
@@ -52,7 +59,7 @@ export const AppNavbar = (props) => {
     const id = props.children.indexOf(child);
     const tabname = child.props.id;
     return (
-      <NavItem key={id} className="d-flex flex-nowrap">
+      <NavItem key={id} className="d-flex flex-nowrap align-items-center ">
         <NavLink
           style={activeTab === id ? style1 : style2}
           className={classnames({ active: activeTab === id })}
@@ -62,6 +69,23 @@ export const AppNavbar = (props) => {
           {`${tabname}`}
         </NavLink>
       </NavItem>
+    );
+  });
+
+  const buttons = props.children.map((child) => {
+    const id = props.children.indexOf(child);
+    const buttonname = child.props.id;
+    return (
+      <DropdownItem key={id} className="d-flex flex-nowrap align-items-center ">
+        <NavLink
+          style={activeTab === id ? style1 : style2}
+          className={classnames({ active: activeTab === id })}
+          onClick={() => {
+            toggle(id);
+          }}>
+          {`${buttonname}`}
+        </NavLink>
+      </DropdownItem>
     );
   });
 
@@ -77,13 +101,23 @@ export const AppNavbar = (props) => {
   return (
     <>
       <Navbar
-        tabs='true'
+        tabs="true"
         nav-pills="true"
         style={style3}
         expand="sm"
-        className="d-flex bd-highlight mb-5">
+        className="d-flex bd-highlight mb-5 ">
         <Container>
-          <div className="d-inline-flex">{tabs}</div>
+          {document.documentElement.clientWidth < 768 ? (
+            <>
+              <Dropdown isOpen={dropdownOpen} toggle={dropdownToggle} style={{backgroundColor: '#292b2c'}}>
+                <DropdownToggle caret style={{backgroundColor: '#292b2c'}}>Dropdown</DropdownToggle>
+                <DropdownMenu style={{backgroundColor: '#292b2c'}}>{buttons}</DropdownMenu>
+              </Dropdown>
+            </>
+          ) : (
+            <div className="d-inline-flex">{tabs}</div>
+          )}
+
           <Link></Link>
         </Container>
       </Navbar>
@@ -108,3 +142,4 @@ const style2 = {
   color: 'white',
   cursor: 'pointer',
 };
+

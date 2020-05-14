@@ -23,6 +23,9 @@ const UserSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+/*   profile_pic:{
+
+  } */
 });
 
 module.exports = User = mongoose.model('user', UserSchema);
